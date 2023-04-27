@@ -1,0 +1,32 @@
+﻿<Window x:Class="FastWork.Views.AddTaskView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FastWork.Views"
+        xmlns:vm="clr-namespace:FastWork.ViewModels"
+        mc:Ignorable="d"
+        Title="AddTaskView" Height="180" Width="230" WindowStyle="None" ResizeMode="NoResize" Background="#FF121215">
+    <Window.DataContext>
+        <vm:AddTaskVM/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Background="#FF101013">
+            <Grid>
+                <Image Source="../Assets/close-window.png" HorizontalAlignment="Right" VerticalAlignment="Center" Opacity="0.9"/>
+                <TextBlock Text="FastWork : Add a task" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="White" Opacity="0.7" FontSize="14"/>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" Margin="5 5 5 5" Background="#FF101013">
+            <Grid>
+                <TextBlock Text="Title" Foreground="White" Opacity="0.9" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                <TextBox Height="20" Width="200" Margin="10,34,280,282" Background="#FF121215" BorderBrush="#FF121215" Text="{Binding Title}" Style="{DynamicResource MahApps.Styles.TextBox}"/>
+                <Button Style="{DynamicResource ButtonStyle}" Width="200" Content="Add a task" Margin="10,78,10,10" FontSize="14" Command="{Binding AddTaskCommand}"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
